@@ -1,16 +1,18 @@
 import React from "react";
 import LoadingButton from "@mui/lab/LoadingButton";
 import prodReq, { Iproduct } from "./Requests/ProductRequest";
+import ProductBoxMap from "./ProductBox";
 function App(): JSX.Element {
   const [searchButtonLoading, setSearchButtonLoading] =
     React.useState<boolean>(false);
+  const [basket, setBasket] = React.useState<Iproduct[]>([]);
   const [products, setProducts] = React.useState<Iproduct[]>();
   React.useEffect(() => {
-    products && console.log(products);
+    document.title = "Product Finder";
   }, [products]);
   return (
-    <div className="projects">
-      <div className="centerDiv--viewCatches">
+    <div className="topLevelDiv">
+      <div className="MainBox">
         <LoadingButton
           sx={{ width: 100, mb: 2 }}
           onClick={async () => {
@@ -28,7 +30,10 @@ function App(): JSX.Element {
                   randProdNum3 === randProdNum2 ||
                   randProdNum1 === randProdNum2 ||
                   randProdNum1 === randProdNum3
-                )
+                ) &&
+                randProdNum1 !== 0 &&
+                randProdNum2 !== 0 &&
+                randProdNum3 !== 0
               ) {
                 uniqueNums = true;
               }
@@ -44,6 +49,14 @@ function App(): JSX.Element {
         >
           Search random products
         </LoadingButton>
+        {products && (
+          <ProductBoxMap
+            ProductList={products}
+            addItemToBask={(item) => {
+              setBasket(basket.concat([item]));
+            }}
+          />
+        )}
       </div>
     </div>
   );

@@ -6,21 +6,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+img {
+  max-width: 20%;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.projects{
+.topLevelDiv{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.centerDiv--viewCatches{
-  overflow: hidden;
+.productBoxDiv{
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: rgba(172, 172, 172, 0.644); 
+  margin: 2px 3px 2px 3px;
+  padding: 1rem;
+}
+.centerDiv--DictVersion{
+  justify-content: center;
+}
+.MainProdListDiv{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.MainBox{
   background-color: rgb(255, 255, 255); 
-  border-radius: 4px;
-  margin: 10px;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
-  padding: 0.7rem;
+  margin: 15px 20px 15px 20px;
+  padding: 1rem;
+  text-align: center;
+  width: 90%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
 }
