@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.projects{
+  display: flex;
+  justify-content: center;
+}
+.centerDiv--viewCatches{
+  overflow: hidden;
+  background-color: rgb(255, 255, 255); 
+  border-radius: 4px;
+  margin: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+  padding: 0.7rem;
+}
